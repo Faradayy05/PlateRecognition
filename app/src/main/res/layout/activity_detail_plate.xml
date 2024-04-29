@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.platedetail.DetailPlateActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical"
+            app:navigationIcon="@drawable/ic_caret_left"
+            app:titleTextAppearance="@style/header5_b">
+
+            <TextView
+                android:id="@+id/txt_detail"
+                style="@style/subtitle2_b"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_detail"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_img_kendaraan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="10dp"
+                app:elevation="0dp">
+
+                <ImageView
+                    android:id="@+id/img_kendaraan"
+                    android:layout_width="375dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/landing2"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/plat_kend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B 1197 SVA"
+                style="@style/header5_b"
+                android:textColor="@color/neutral_500"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/card_img_kendaraan"
+                app:layout_constraintEnd_toEndOf="@id/card_img_kendaraan"
+                app:layout_constraintTop_toBottomOf="@id/card_img_kendaraan"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_detail_pemilik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/plat_kend"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_detail_pemilik"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_pemilik"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pemilik Kendaraan"
+                        style="@style/subtitle2_b"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:id="@+id/divider_pemilik"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/black" />
+
+                    <TableLayout
+                        android:id="@+id/tl_detail_pemilik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_nama"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_nama_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Ahmad Kasim"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_kk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No. Kartu Keluarga"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_kk_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="12438798239940"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_alamat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alamat"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_alamat_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Jl. Diponegoro, No. 1, Semarang, Jawa Tengah"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_no_telepon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No. Telepon"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_no_telepon_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="+62892-0387-1936"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_detail_kendaraan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_detail_pemilik"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_detail_kendaraan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_kendaraan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detail Kendaraan"
+                        style="@style/subtitle2_b"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:id="@+id/divider_kendaraan"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/black" />
+
+                    <TableLayout
+                        android:id="@+id/tl_detail_kendaraan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_no_daftar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No. Daftar"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_no_daftar_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="123-456-789"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_no_polisi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No. Polisi"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_no_polisi_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="15552-039457-66563"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_model"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Model Kendaraan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_model_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="SUV / Sedan"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_jenis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jenis Kendaraan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_jenis_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Mobil"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_merk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Merk Kendaraan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_merk_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Toyota"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tipe Kendaraan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_type_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Avanza"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_tahun_buat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tahun Pembuatan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_tahun_buat_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="2022"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_tahun_rakit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tahun Perakitan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_tahun_rakit_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="2021"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_cylinder"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Silinder"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_cylinder_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="4"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_warna_kendaraan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Warna Kendaraan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_warna_kendaraan_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Merah"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_fungsi_kendaraan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Fungsi Kendaraan"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_fungsi_kendaraan_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Pribadi"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_bahan_bakar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bahan Bakar"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_bahan_bakar_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Pertamax"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_no_rangka"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor Rangka"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_no_rangka_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="ABC123456"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_no_mesin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor Mesin"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_no_mesin_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="DEF789012"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_no_bpkb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nomor BPKB"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_no_bpkb_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="GHI345678"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_jumlah_sumbu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Jumlah Sumbu"
+                                style="@style/body2_sb"
+                                android:textColor="@color/neutral_500"/>
+
+                            <TextView
+                                android:id="@+id/txt_jumlah_sumbu_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="2"
+                                style="@style/body2_m"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/black"/>
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_detail_lainnya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_detail_kendaraan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_detail_lainnya"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_lainnya"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detail Lainnya"
+                        style="@style/subtitle2_b"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:id="@+id/divider_lainnya"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/black" />
+
+                        <TableLayout
+                            android:id="@+id/tl_detail_lainnya"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_status_blokir"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Status Blokir"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_status_blokir_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Aktif"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_faktur"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal Faktur"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_faktur_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2024-03-07"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_kwitansi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal Kwitansi"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_kwitansi_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2024-03-07"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_akhir_stnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal Akhir STNK"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_akhir_stnk_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2024-12-31"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_jatuh_tempo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal Jatuh Tempo"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_jatuh_tempo_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2024-04-07"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_pokok"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Biaya Pokok"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_pokok_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="5000000"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_denda"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Biaya Denda"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_denda_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="200000"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_bunga"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Biaya Bunga"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_bunga_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="100000"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_swdkllj"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Biaya SWDKLLJ"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_biaya_swdkllj_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="50000"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_no_stnk"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nomor STNK"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_no_stnk_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="STNK123456"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_no_skpd"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nomor SKPD"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_no_skpd_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="SKPD789012"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_no_kohir"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nomor Kohir"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_no_kohir_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="KOHIR345678"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_no_skum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Nomor SKUM"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_no_skum_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="SKUM123456"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tahun_berlaku"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tahun Berlaku"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tahun_berlaku_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2025"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_max_bayar_pkb"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal Max Bayar PKB"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_max_bayar_pkb_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2024-12-31"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_max_bayar_swdkllj"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal Max Bayar SWDKLLJ"
+                                    style="@style/body2_sb"
+                                    android:textColor="@color/neutral_500"/>
+
+                                <TextView
+                                    android:id="@+id/txt_tanggal_max_bayar_swdkllj_value"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="2024-12-31"
+                                    style="@style/body2_m"
+                                    android:layout_marginStart="8dp"
+                                    android:textColor="@color/black"/>
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

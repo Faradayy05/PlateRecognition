@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1038821256245",
+    "project_id": "plate-recognition-5d6a9",
+    "storage_bucket": "plate-recognition-5d6a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038821256245:android:a9cde9f03335937937557c",
+        "android_client_info": {
+          "package_name": "com.skripsi.platerecognition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038821256245-5cnhjqqlj4o2o3bkp63mkdgng84vgj7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.skripsi.platerecognition",
+            "certificate_hash": "bdc20c7da6b2aa1e455f2f64995809f00c47be03"
+          }
+        },
+        {
+          "client_id": "1038821256245-88gfo1b6ehffo0v8bvkbnlcne8o2jk8e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKbNWuLswPZdgvZn0SydrW9XZ2nrq0Ilg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038821256245-88gfo1b6ehffo0v8bvkbnlcne8o2jk8e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
