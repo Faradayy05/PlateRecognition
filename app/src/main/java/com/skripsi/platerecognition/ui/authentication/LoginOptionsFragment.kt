@@ -2,6 +2,9 @@ package com.skripsi.platerecognition.ui.authentication
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Shader
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -72,6 +75,11 @@ class LoginOptionsFragment : Fragment() {
                 addToBackStack(null)
             }
         }
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.memphis_bg)
+        val drawable = BitmapDrawable(resources, bitmap)
+        drawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+        binding.loginOptionsLyt.background = drawable
     }
 
     private fun firebaseSetup() {

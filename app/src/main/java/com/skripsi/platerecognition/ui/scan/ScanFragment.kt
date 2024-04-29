@@ -4,6 +4,8 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
+import android.graphics.Shader
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -136,7 +138,15 @@ class ScanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupView()
         setupAction()
+    }
+
+    private fun setupView() {
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.memphis_bg)
+        val drawable = BitmapDrawable(resources, bitmap)
+        drawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+        binding.scanLyt.background = drawable
     }
 
     private fun setupAction() {

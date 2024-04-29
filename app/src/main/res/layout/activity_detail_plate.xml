@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/detail_plate_lyt"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -817,7 +818,7 @@
                                     android:id="@+id/txt_tanggal_jatuh_tempo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Tanggal Jatuh Tempo"
+                                    android:text="Tanggal Jatuh \nTempo"
                                     style="@style/body2_sb"
                                     android:textColor="@color/neutral_500"/>
 
@@ -1067,7 +1068,7 @@
                                     android:id="@+id/txt_tanggal_max_bayar_pkb"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Tanggal Max Bayar PKB"
+                                    android:text="Tanggal Max Bayar \nPKB"
                                     style="@style/body2_sb"
                                     android:textColor="@color/neutral_500"/>
 
@@ -1092,7 +1093,7 @@
                                     android:id="@+id/txt_tanggal_max_bayar_swdkllj"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Tanggal Max Bayar SWDKLLJ"
+                                    android:text="Tanggal Max Bayar \nSWDKLLJ"
                                     style="@style/body2_sb"
                                     android:textColor="@color/neutral_500"/>
 

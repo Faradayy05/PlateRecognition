@@ -1,6 +1,9 @@
 package com.skripsi.platerecognition.ui.account
 
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Shader
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
@@ -54,12 +57,25 @@ class AccountActivity : AppCompatActivity() {
         auth = Firebase.auth
         val user = auth.currentUser
 
-        binding.edName.text = Editable.Factory.getInstance().newEditable(user?.displayName)
+        if(user?.displayName == "" || user?.displayName == null) {
+            binding.edName.text = Editable.Factory.getInstance().newEditable(user?.email?.split("@")?.get(0))
+        } else {
+            binding.edName.text = Editable.Factory.getInstance().newEditable(user.displayName)
+        }
         binding.edEmail.text = Editable.Factory.getInstance().newEditable(user?.email)
-        Glide
-            .with(this)
-            .load(user?.photoUrl)
-            .into(binding.imgFotoProfil)
+        if(user?.photoUrl == null) {
+            binding.imgFotoProfil.setImageResource(R.drawable.default_profile)
+        } else {
+            Glide
+                .with(this)
+                .load(user.photoUrl)
+                .into(binding.imgFotoProfil)
+        }
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.memphis_bg)
+        val drawable = BitmapDrawable(resources, bitmap)
+        drawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+        binding.accountLyt.background = drawable
     }
 
     private fun changePhoto() {

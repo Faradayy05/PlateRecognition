@@ -1,6 +1,9 @@
 package com.skripsi.platerecognition.ui.authentication
 
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Shader
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -62,6 +65,11 @@ class LoginFragment : Fragment() {
                     }
             }
         }
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.memphis_bg)
+        val drawable = BitmapDrawable(resources, bitmap)
+        drawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+        binding.loginLyt.background = drawable
     }
 
     private fun validateForm(email: String, password: String): Boolean {

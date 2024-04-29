@@ -1,6 +1,9 @@
 package com.skripsi.platerecognition.ui.profile
 
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Shader
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -48,7 +51,9 @@ class ProfileFragment : Fragment() {
         setupView()
 
         binding.imgCaretAccount.setOnClickListener {
-            startActivity(Intent(requireContext(), AccountActivity::class.java))
+            activity?.let {
+                startActivity(Intent(requireContext(), AccountActivity::class.java))
+            }
         }
 
         binding.btnSignout.setOnClickListener {
@@ -66,13 +71,28 @@ class ProfileFragment : Fragment() {
         auth = Firebase.auth
         val user = auth.currentUser
 
-        binding.txtNamaProfil.text = user?.displayName
+        if(user?.displayName == "" || user?.displayName == null) {
+            binding.txtNamaProfil.text = user?.email?.split("@")?.get(0)
+        } else {
+            binding.txtNamaProfil.text = user.displayName
+        }
         binding.txtEmailProfil.text = user?.email
-        Glide
-            .with(requireContext())
-            .load(user?.photoUrl)
-            .into(binding.imgFotoProfil)
+        if(user?.photoUrl == null) {
+            binding.imgFotoProfil.setImageResource(R.drawable.default_profile)
+        } else {
+            Glide
+                .with(requireContext())
+                .load(user.photoUrl)
+                .into(binding.imgFotoProfil)
+        }
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.drawable.memphis_bg)
+        val drawable = BitmapDrawable(resources, bitmap)
+        drawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
+        binding.profileLyt.background = drawable
+
         Log.d("ProfileFragment", "setupView: ${user?.photoUrl}")
+        Log.d("ProfileFragment", "setupView: ${user?.email}")
         Log.d("ProfileFragment", "setupView: ${user?.isEmailVerified}")
     }
 
