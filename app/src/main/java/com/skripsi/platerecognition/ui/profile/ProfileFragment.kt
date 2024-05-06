@@ -22,6 +22,7 @@ import com.skripsi.platerecognition.R
 import com.skripsi.platerecognition.databinding.FragmentProfileBinding
 import com.skripsi.platerecognition.ui.account.AccountActivity
 import com.skripsi.platerecognition.ui.authentication.AuthenticationActivity
+import com.skripsi.platerecognition.ui.history.HistoryActivity
 
 class ProfileFragment : Fragment() {
 
@@ -53,6 +54,12 @@ class ProfileFragment : Fragment() {
         binding.imgCaretAccount.setOnClickListener {
             activity?.let {
                 startActivity(Intent(requireContext(), AccountActivity::class.java))
+            }
+        }
+
+        binding.imgCaretHistory.setOnClickListener {
+            activity?.let {
+                startActivity(Intent(requireContext(), HistoryActivity::class.java))
             }
         }
 
@@ -93,7 +100,6 @@ class ProfileFragment : Fragment() {
 
         Log.d("ProfileFragment", "setupView: ${user?.photoUrl}")
         Log.d("ProfileFragment", "setupView: ${user?.email}")
-        Log.d("ProfileFragment", "setupView: ${user?.isEmailVerified}")
     }
 
     private fun signOut() {

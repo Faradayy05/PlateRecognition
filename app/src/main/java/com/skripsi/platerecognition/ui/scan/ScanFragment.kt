@@ -157,6 +157,7 @@ class ScanFragment : Fragment() {
                 activity?.let {
                     val intent = Intent(it, DetailPlateActivity::class.java)
                     intent.putExtra("IMG_FILE", getFile)
+                    intent.putExtra("NO_POLISI", "OC87CTI")
                     startActivity(intent)
                 }
             }

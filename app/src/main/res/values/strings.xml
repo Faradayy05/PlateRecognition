@@ -24,7 +24,7 @@
     <string name="no_permission">Don\'t have permission</string>
     <string name="choose_picture">Pilih Gambar</string>
     <string name="change_photo">Upload an image</string>
-    <string name="signout">Sign Out</string>
+    <string name="signout">Keluar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_account">Belum Punya Akun?</string>
     <string name="register">Daftar Sekarang!</string>
@@ -45,6 +45,11 @@
     <string name="edit_account">Edit Account</string>
     <string name="save">Simpan</string>
     <string name="title_detail">Detail Kendaraan</string>
+    <string name="noPolisi">AB1111CD</string>
+    <string name="deskripsi_kendaraan">%1$s - %2$s - %3$s</string>
+    <string name="title_history">Histori Kendaraan</string>
+    <string name="no_data">Data Tidak Ditemukan</string>
+    <string name="no_history">Tidak Ada Data Histori Tersimpan</string>
 
 
 </resources>

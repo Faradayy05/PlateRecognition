@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Shader
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -79,6 +80,8 @@ class HomeFragment : Fragment() {
         val drawable = BitmapDrawable(resources, bitmap)
         drawable.setTileModeXY(Shader.TileMode.REPEAT, Shader.TileMode.REPEAT)
         binding.homeLyt.background = drawable
+
+        Log.d("Home Fragment", "User token: ${user?.getIdToken(false)?.result?.token.toString()}")
     }
 
     override fun onDestroyView() {
