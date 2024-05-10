@@ -348,6 +348,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
             motion:layout_constraintBottom_toTopOf="@+id/menu2"
+            enabled="true"
             android:alpha="1"
             motion:layout_constraintStart_toStartOf="parent" />
     </ConstraintSet>

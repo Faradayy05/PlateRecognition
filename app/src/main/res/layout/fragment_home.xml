@@ -59,10 +59,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+android:layout_marginBottom="16dp"
             android:layout_marginHorizontal="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_home"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:cardCornerRadius="10dp"
             app:cardElevation="5dp">
 
@@ -202,6 +204,128 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Detail plat kendaraan akan muncul setelah deteksi selesai"
+                            style="@style/body2_m"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                </TableLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Untuk mengelola dan melihat histori:"
+                    style="@style/body2_m"
+                    android:textColor="@color/black"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1. "
+                            style="@style/body2_m"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tekan icon disk pada pojok kanan bawah (pada halaman detail kendaraan)"
+                            style="@style/body2_m"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2. "
+                            style="@style/body2_m"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jika icon disk berubah warna, berarti data berhasil disimpan dan akan memunculkan pesan berhasil"
+                            style="@style/body2_m"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3. "
+                            style="@style/body2_m"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jika ingin menghapus data, tekan icon disk kembali dan akan memunculkan pesan berhasil"
+                            style="@style/body2_m"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4. "
+                            style="@style/body2_m"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Untuk melihat histori, menuju ke halaman profil dan pilih menu histori kendaraan"
+                            style="@style/body2_m"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5. "
+                            style="@style/body2_m"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pada halaman histori kendaraan akan ditampilkan data yang telah disimpan sebelumnya"
+                            style="@style/body2_m"
+                            android:layout_weight="1"
+                            android:textColor="@color/black"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6. "
+                            style="@style/body2_m"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pilih salah satu histori untuk melihat detail kendaraan tersebut"
                             style="@style/body2_m"
                             android:layout_weight="1"
                             android:textColor="@color/black"/>

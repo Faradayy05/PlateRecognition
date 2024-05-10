@@ -132,7 +132,7 @@ class DetailPlateActivity : AppCompatActivity() {
         binding.apply {
             val data = detailPlate[0]
             platKend.text = data.noPolisi
-            txtNoDaftarEri.text = data.noDaftarEri
+            txtNoDaftarEriValue.text = data.noDaftarEri
             txtTanggalMaxBayarPkbValue.text = data.tanggalMaxBayarPkb
             txtTanggalAkhirStnkValue.text = data.tanggalAkhirStnk
             txtTanggalAkhirStnkLamaValue.text = data.tanggalAkhirStnkLama

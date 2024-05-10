@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.skripsi.platerecognition.R
 import com.skripsi.platerecognition.databinding.FragmentProfileBinding
-import com.skripsi.platerecognition.ui.account.AccountActivity
 import com.skripsi.platerecognition.ui.authentication.AuthenticationActivity
 import com.skripsi.platerecognition.ui.history.HistoryActivity
 
@@ -50,12 +49,6 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupView()
-
-        binding.imgCaretAccount.setOnClickListener {
-            activity?.let {
-                startActivity(Intent(requireContext(), AccountActivity::class.java))
-            }
-        }
 
         binding.imgCaretHistory.setOnClickListener {
             activity?.let {

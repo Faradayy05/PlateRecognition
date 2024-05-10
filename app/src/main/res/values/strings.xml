@@ -8,12 +8,12 @@
     <!-- Landing Page -->
     <string name="title_menu_1">Selamat Datang di AI Plate Recognition</string>
     <string name="title_menu_2">Mendeteksi Plat Nomor Kendaraan</string>
-    <string name="title_menu_3">Simulasi Pembayaran Pajak Kendaraan</string>
-    <string name="title_menu_4">Ayo Mulai Menggunakan Fitur</string>
+    <string name="title_menu_3">Mengelola Hasil Deteksi</string>
+    <string name="title_menu_4">Ayo Mulai Menggunakan Aplikasi</string>
     <string name="menu_description_1">AI Plate Recoginition merupakan aplikasi berbasis android mobile dengan menggunakan machine learning untuk mendeteksi plat kendaraan (License Plate) dengan menampilkan keterangan detail dan simulasi pembayaran pajak.</string>
     <string name="menu_description_2">Dengan menggunakan model machine learning, aplikasi dapat membaca dan memproses plat nomor kendaraan dengan cukup akurat. Dengan mengunggah gambar kendaraan yang ingin diidentifikasi, lalu akan diproses oleh model dan menguraikan informasi yang terkandung dalam plat nomor tersebut.</string>
-    <string name="menu_description_3">Fitur dengan pembayaran pajak melalui online dapat memudahkan pemilik kendaraan akan pemahaman yang jelas dan transparan tentang biaya pajak kendaraan mereka. Lalu ini akan mempermudah menghitung perkiraan pajak kendaraan berdasarkan berbagai faktor seperti jenis kendaraan, tahun pembuatan, kapasitas mesin, dan lainnya.</string>
-    <string name="menu_description_4">Ayo mulai bergabung dan mencoba fitur yang sangat mudah digunakan dan mempermudah keseharian terhadap Pembayaran Pajak dan Dapat mengenali detail kendaraan.</string>
+    <string name="menu_description_3">Fitur yang dapat mengelola hasil deteksi berupa dapat menyimpan ataupun menghapus hasil deteksi plat nomor kendaraan. Dengan demikian, dapat mempermudah melihat kembali detail kendaraan yang telah disimpan sebelumnya tanpa mendeteksi ulang kembali.</string>
+    <string name="menu_description_4">Ayo mulai bergabung dan mencoba fitur yang sangat mudah digunakan dan mempermudah keseharian terhadap mengelola detail kendaraan dengan hanya plat nomor kendaraan.</string>
     <string name="get_started">Mulai</string>
     <string name="sigin_google">Continue with Google</string>
     <string name="sigin_mail">Continue with Email</string>
@@ -28,7 +28,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_account">Belum Punya Akun?</string>
     <string name="register">Daftar Sekarang!</string>
-    <string name="agreement_text">Dengan menekan \"Continue with Email/Google\" diatas, anda menyetujui <font color="#0099CC">Syarat dan Ketentuan </font> serta <font color="#0099CC">Kebijakan Privasi </font> dari Plate Recognition</string>
+    <string name="agreement_text">Dengan menekan \"Continue with Email/Google\" di atas, anda menyetujui <font color="#0099CC">Syarat dan Ketentuan </font> serta <font color="#0099CC">Kebijakan Privasi </font> dari Plate Recognition</string>
     <string name="title_login">Masuk</string>
     <string name="description_login">Silahkan masuk untuk melanjutkan</string>
     <string name="title_email">Email</string>

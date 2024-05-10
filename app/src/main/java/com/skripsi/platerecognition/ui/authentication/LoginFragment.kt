@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.skripsi.platerecognition.MainActivity
 import com.skripsi.platerecognition.R
+import com.skripsi.platerecognition.data.local.entity.User
 import com.skripsi.platerecognition.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -50,17 +51,18 @@ class LoginFragment : Fragment() {
         binding.btnLogin.setOnClickListener {
             val edEmail = binding.edEmail.text.toString().trim()
             val edPassword = binding.edPassword.text.toString().trim()
+            val userLogin = User(email = edEmail, password = edPassword)
             val isValid = validateForm(edEmail, edPassword)
 
             if (isValid) {
-                auth.signInWithEmailAndPassword(edEmail, edPassword)
+                auth.signInWithEmailAndPassword(userLogin.email, userLogin.password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
                             val user = auth.currentUser
                             updateUI(user)
-                            Toast.makeText(requireContext(), "token: ${user?.getIdToken(false)?.result?.token.toString()}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "Authentication success", Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(requireContext(), "Authentication failed", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "${task.exception?.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
             }

@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
 import com.skripsi.platerecognition.MainActivity
 import com.skripsi.platerecognition.R
+import com.skripsi.platerecognition.data.local.entity.User
 import com.skripsi.platerecognition.databinding.FragmentRegisterBinding
 import java.util.regex.Pattern
 
@@ -54,10 +55,11 @@ class RegisterFragment : Fragment() {
             val edEmail = binding.edEmail.text.toString().trim()
             val edPassword = binding.edPassword.text.toString().trim()
             val edConfPassword = binding.edPasswordConfirmation.text.toString().trim()
-            val isValid = validateForm(edName, edEmail, edPassword, edConfPassword)
+            val userRegis = User(name = edName, email = edEmail, password = edPassword)
+            val isValid = validateForm(userRegis, edConfPassword)
 
             if (isValid) {
-                auth.createUserWithEmailAndPassword(edEmail, edPassword)
+                auth.createUserWithEmailAndPassword(userRegis.email, userRegis.password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
                             val user = auth.currentUser
@@ -76,24 +78,24 @@ class RegisterFragment : Fragment() {
         binding.registerLyt.background = drawable
     }
 
-    private fun validateForm(name: String, email: String, password: String, confPassword: String): Boolean {
+    private fun validateForm(user: User, confPassword: String): Boolean {
         var isValid = true
 
         when {
-            name.isEmpty() -> {
+            user.name.isEmpty() -> {
                 binding.edName.error = "Nama tidak boleh kosong"
                 isValid = false
             }
 
-            email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
-                binding.edEmail.error = if (email.isEmpty()) "Email tidak boleh kosong" else "Email tidak valid"
+            user.email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(user.email).matches() -> {
+                binding.edEmail.error = if (user.email.isEmpty()) "Email tidak boleh kosong" else "Email tidak valid"
                 isValid = false
             }
 
-            password.isEmpty() || password.length !in 8..15 || !Pattern.compile("^(?=.*\\d)(?=\\S+$).{8,}$").matcher(password).matches() -> {
-                if (password.isEmpty()) {
+            user.password.isEmpty() || user.password.length !in 8..15 || !Pattern.compile("^(?=.*\\d)(?=\\S+$).{8,}$").matcher(user.password).matches() -> {
+                if (user.password.isEmpty()) {
                     binding.edPassword.error = "Password tidak boleh kosong"
-                } else if (password.length !in 8..15) {
+                } else if (user.password.length !in 8..15) {
                     binding.edPassword.error = "Password harus memiliki panjang 8-15 karakter"
                 } else {
                     binding.edPassword.error = "Password harus memiliki mengandung angka dan tanpa spasi"
@@ -101,7 +103,7 @@ class RegisterFragment : Fragment() {
                 isValid = false
             }
 
-            confPassword.isEmpty() || confPassword != password -> {
+            confPassword.isEmpty() || confPassword != user.password -> {
                 binding.edPasswordConfirmation.error = if (confPassword.isEmpty()) "Konfirmasi Password tidak boleh kosong" else "Konfirmasi Password tidak sama dengan Password"
                 isValid = false
             }
