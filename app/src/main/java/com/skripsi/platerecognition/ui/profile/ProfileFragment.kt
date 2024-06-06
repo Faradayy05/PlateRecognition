@@ -51,9 +51,7 @@ class ProfileFragment : Fragment() {
         setupView()
 
         binding.imgCaretHistory.setOnClickListener {
-            activity?.let {
-                startActivity(Intent(requireContext(), HistoryActivity::class.java))
-            }
+            goToHistory()
         }
 
         binding.btnSignout.setOnClickListener {
@@ -93,6 +91,12 @@ class ProfileFragment : Fragment() {
 
         Log.d("ProfileFragment", "setupView: ${user?.photoUrl}")
         Log.d("ProfileFragment", "setupView: ${user?.email}")
+    }
+
+    private fun goToHistory() {
+        activity?.let {
+            startActivity(Intent(requireContext(), HistoryActivity::class.java))
+        }
     }
 
     private fun signOut() {

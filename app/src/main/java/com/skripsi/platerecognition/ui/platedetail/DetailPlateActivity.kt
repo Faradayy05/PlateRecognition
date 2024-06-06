@@ -40,7 +40,6 @@ class DetailPlateActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupView()
-
     }
 
     private fun setupView() {
@@ -83,10 +82,14 @@ class DetailPlateActivity : AppCompatActivity() {
                     is Result.Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
                         binding.errMsg.visibility = View.GONE
+                        binding.nestedScrollView.visibility = View.GONE
+                        binding.fabSave.visibility = View.GONE
                     }
                     is Result.Success -> {
                         binding.progressBar.visibility = View.GONE
                         binding.errMsg.visibility = View.GONE
+                        binding.nestedScrollView.visibility = View.VISIBLE
+                        binding.fabSave.visibility = View.VISIBLE
                         val detailPlate = result.data.data
                         if (detailPlate != null) {
                             setDetailPLate(detailPlate)
@@ -100,6 +103,8 @@ class DetailPlateActivity : AppCompatActivity() {
                         binding.progressBar.visibility = View.GONE
                         binding.errMsg.text = result.error
                         binding.errMsg.visibility = View.VISIBLE
+                        binding.nestedScrollView.visibility = View.GONE
+                        binding.fabSave.visibility = View.GONE
                     }
                 }
             }

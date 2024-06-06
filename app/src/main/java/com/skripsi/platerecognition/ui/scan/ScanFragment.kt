@@ -22,7 +22,6 @@ import androidx.exifinterface.media.ExifInterface
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.load.resource.bitmap.TransformationUtils
-import com.google.android.gms.maps.model.LatLng
 import com.skripsi.platerecognition.R
 import com.skripsi.platerecognition.databinding.FragmentScanBinding
 import com.skripsi.platerecognition.ui.platedetail.DetailPlateActivity
@@ -36,7 +35,6 @@ class ScanFragment : Fragment() {
     private var _binding: FragmentScanBinding? = null
     private var getFile: File? = null
     private lateinit var currentPhotoPath: String
-    private var location: LatLng? = null
 
     private val launcherIntentCamera = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -153,14 +151,7 @@ class ScanFragment : Fragment() {
         binding.apply {
             btnCamera.setOnClickListener { startTakePhoto() }
             btnGallery.setOnClickListener { startGallery() }
-            uploadButton.setOnClickListener {
-                activity?.let {
-                    val intent = Intent(it, DetailPlateActivity::class.java)
-                    intent.putExtra("IMG_FILE", getFile)
-                    intent.putExtra("NO_POLISI", "OC87CTI")
-                    startActivity(intent)
-                }
-            }
+            uploadButton.setOnClickListener { upload() }
         }
     }
 
@@ -187,6 +178,15 @@ class ScanFragment : Fragment() {
         intent.type = "image/*"
         val chooser = Intent.createChooser(intent, getString(R.string.choose_picture))
         launcherIntentGallery.launch(chooser)
+    }
+
+    private fun upload() {
+        activity?.let {
+            val intent = Intent(it, DetailPlateActivity::class.java)
+            intent.putExtra("IMG_FILE", getFile)
+            intent.putExtra("NO_POLISI", "OC87CTI")
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {

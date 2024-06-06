@@ -51,25 +51,7 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnRegister.setOnClickListener {
-            val edName = binding.edName.text.toString().trim()
-            val edEmail = binding.edEmail.text.toString().trim()
-            val edPassword = binding.edPassword.text.toString().trim()
-            val edConfPassword = binding.edPasswordConfirmation.text.toString().trim()
-            val userRegis = User(name = edName, email = edEmail, password = edPassword)
-            val isValid = validateForm(userRegis, edConfPassword)
-
-            if (isValid) {
-                auth.createUserWithEmailAndPassword(userRegis.email, userRegis.password)
-                    .addOnCompleteListener(requireActivity()) { task ->
-                        if (task.isSuccessful) {
-                            val user = auth.currentUser
-                            updateUI(user)
-                            Toast.makeText(requireContext(), "Register success", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(requireContext(), "Register failed", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-            }
+           register()
         }
 
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.memphis_bg)
@@ -110,6 +92,28 @@ class RegisterFragment : Fragment() {
         }
 
         return isValid
+    }
+
+    private fun register() {
+        val edName = binding.edName.text.toString().trim()
+        val edEmail = binding.edEmail.text.toString().trim()
+        val edPassword = binding.edPassword.text.toString().trim()
+        val edConfPassword = binding.edPasswordConfirmation.text.toString().trim()
+        val userRegis = User(name = edName, email = edEmail, password = edPassword)
+        val isValid = validateForm(userRegis, edConfPassword)
+
+        if (isValid) {
+            auth.createUserWithEmailAndPassword(userRegis.email, userRegis.password)
+                .addOnCompleteListener(requireActivity()) { task ->
+                    if (task.isSuccessful) {
+                        val user = auth.currentUser
+                        updateUI(user)
+                        Toast.makeText(requireContext(), "Register success", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(requireContext(), "Register failed", Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
     }
 
     private fun setupFirebase() {
